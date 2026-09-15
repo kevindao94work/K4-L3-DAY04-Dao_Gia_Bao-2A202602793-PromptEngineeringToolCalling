@@ -145,7 +145,7 @@ UI chạy artifact v3 và runtime `chat-ui-v2`; runtime có policy bổ sung, ch
 
 UI hiển thị tool/args/result/error và version, tự lưu transcript; có nút tải JSON. Nút xác nhận dùng payload lưu phía server và chỉ dùng một lần; tin nhắn mới hoặc hủy làm mất hiệu lực bản nháp. Runtime giữ tối đa 10 cặp lượt gần nhất, tối đa 4 vòng tool/lượt và chặn lặp cùng call. [Source](../chat_runtime.py), [server](../ui_server.py), [UI](../ui/index.html), [10 unit tests](analysis/ui_unit_tests.txt), [HTTP checks](analysis/ui_http_checks.json).
 
-Transcript [thao tác Safari](../transcripts/62d9424fdc6140778e7e3e493b150f0c.transcript.json): lượt 1–3 chuẩn bị/sửa/hủy, không write; lượt 4–5 tạo draft mới và xác nhận, ghi LAB-7EBC3F23. Lỗi preview đầu bỏ asset_id cho thấy vẫn cần review args. Chưa có xác nhận riêng về việc kiểm tra khởi động độc lập theo README; không coi HTTP test là kiểm tra của một người khác.
+Transcript [thao tác Safari](../transcripts/62d9424fdc6140778e7e3e493b150f0c.transcript.json): lượt 1–3 chuẩn bị/sửa/hủy, không write; lượt 4–5 tạo draft mới và xác nhận, ghi LAB-7EBC3F23. Lỗi preview đầu bỏ asset_id cho thấy vẫn cần review args. Chưa có xác nhận riêng về việc kiểm tra khởi động độc lập theo README; HTTP test không thay thế bước kiểm tra khởi động độc lập.
 
 ## B4a. Adversarial evidence
 
