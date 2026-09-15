@@ -296,3 +296,5 @@ Bổ sung transcript thao tác trực tiếp Safari (draft → sửa asset/prior
 - [Kịch bản demo và fallback](../../DEMO.md): lỗi v0 → sửa → so sánh → giới hạn; dùng trong khung demo 20:25–21:00. Chuẩn bị demo không đồng nghĩa đã trình bày trước lớp.
 - [Kiểm tra trước push](analysis/submission_scan.json): không tìm thấy mẫu credential hoặc đường dẫn bị cấm trong tracked files/history; scan theo pattern không phải bảo đảm tuyệt đối. Credential trong fixture an toàn là chuỗi giả lập có sẵn.
 - GitHub/VLearn sẽ được ghi nhận bằng kết quả kiểm tra thực tế trong TEAM.md và biên bản nộp; không đánh dấu đã lưu URL trước khi thấy xác nhận.
+
+Commit chốt sản phẩm/hồ sơ: [`c0a8065`](https://github.com/kevindao94work/K4-L3-DAY04-Dao_Gia_Bao-2A202602793-PromptEngineeringToolCalling/commit/c0a80650846446c4cc2d7217fa7ae023b7da210c). [Audit có thể chạy lại](../scripts/verify_submission.py) và [kết quả](analysis/final_submission_check.json). GitHub repo và REPORT đã mở thành công trong Safari; truy cập HTTP không đăng nhập đều trả 200.

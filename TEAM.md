@@ -8,7 +8,7 @@
 - Tên repo: `K4-L3-DAY04-Dao_Gia_Bao-2A202602793-PromptEngineeringToolCalling`.
 - URL nộp (trang gốc repo): https://github.com/kevindao94work/K4-L3-DAY04-Dao_Gia_Bao-2A202602793-PromptEngineeringToolCalling
 - Nhánh nộp: `main`.
-- Commit kỹ thuật UI/evidence: [`cc50309`](https://github.com/kevindao94work/K4-L3-DAY04-Dao_Gia_Bao-2A202602793-PromptEngineeringToolCalling/commit/cc50309). Commit chốt hồ sơ được ghi trong biên bản sau khi commit/push.
+- Commit kỹ thuật UI/evidence: [`cc50309`](https://github.com/kevindao94work/K4-L3-DAY04-Dao_Gia_Bao-2A202602793-PromptEngineeringToolCalling/commit/cc50309). Commit chốt sản phẩm/hồ sơ: [`c0a80650846446c4cc2d7217fa7ae023b7da210c`](https://github.com/kevindao94work/K4-L3-DAY04-Dao_Gia_Bao-2A202602793-PromptEngineeringToolCalling/commit/c0a80650846446c4cc2d7217fa7ae023b7da210c). Các commit tiếp theo chỉ bổ sung audit và biên bản xác nhận nộp, không đổi kết quả các run.
 - Deadline mặc định theo đề: 23:59 ngày học, Asia/Ho_Chi_Minh; không có bằng chứng về thông báo đổi hạn trong phiên làm việc này.
 
 ## Thành viên và phân công
@@ -56,3 +56,7 @@ Khó khăn kỹ thuật rõ nhất là xử lý xác nhận tạo ticket. Prompt
 *Reflection được Codex hỗ trợ soạn theo yêu cầu của Bảo, dựa trên evidence của dự án; không khẳng định Bảo đã tự thao tác từng bước kiểm thử hoặc viết độc lập không có AI.*
 - **Tự kiểm tra khởi động:** có log HTTP/Safari của Codex và transcript được bổ sung sau đó; chưa nhận xác nhận ai thực hiện các lượt bổ sung hoặc đã làm theo README.
 - **Nộp VLearn:** chờ thao tác nộp và mở lại kiểm tra URL; sẽ cập nhật kết quả thực tế, không ghi thời điểm trước khi nộp.
+
+## Kiểm tra lịch sử đóng góp
+
+Các commit thí nghiệm cũ dùng Git identity cục bộ `Kevin Dao`; GitHub liên kết email cấu hình đó với `kevindao943`, trong khi repo và tài khoản đang đăng nhập là `kevindao94work`. Giữ nguyên lịch sử, không rewrite tác giả để tạo đóng góp giả. Bảo đã giao toàn bộ trách nhiệm dự án cho chính mình; AI assistance được khai báo phía trên. Commit công cụ audit cuối dùng tên Đào Gia Bảo và noreply email của tài khoản `kevindao94work` đã xác thực, có file kỹ thuật [verify_submission.py](starter_v0/scripts/verify_submission.py) và [kết quả audit](starter_v0/artifacts/analysis/final_submission_check.json).
