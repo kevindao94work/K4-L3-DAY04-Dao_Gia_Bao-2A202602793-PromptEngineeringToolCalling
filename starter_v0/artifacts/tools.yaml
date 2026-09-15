@@ -37,12 +37,12 @@ tools:
       required: [service]
 
   - name: inspect_device
-    description: "Kiểm tra thông tin và chẩn đoán thiết bị."
+    description: "Chẩn đoán một thiết bị có asset ID đã biết. Không dùng employee ID, tên người, phòng ban hoặc từ laptop làm asset_id. Tra thiết bị được cấp cho nhân viên chỉ cần lookup_user; chỉ inspect khi người dùng yêu cầu chẩn đoán thiết bị với asset ID hợp lệ đã biết. Luôn truyền check tường minh: chọn nhóm theo triệu chứng/yêu cầu hiện tại (VPN → vpn, Wi-Fi/kết nối mạng → network, bảo mật → security, phần cứng → hardware, phần mềm → software); all chỉ cho kiểm tra tổng thể hoặc không có nhóm cụ thể. Nếu kiểm tra dịch vụ và máy bị lỗi cùng lúc, vẫn giữ nhóm chẩn đoán cụ thể cho máy."
     parameters:
       type: object
       properties:
-        asset_id: {type: string, description: "Mã tài sản"}
-        check: {type: string, enum: [all, network, vpn, security, hardware, software], default: "all", description: "Nhóm kiểm tra"}
+        asset_id: {type: string, description: "ID tài sản thiết bị đã được cung cấp hoặc xác minh; không phải employee ID. Thiếu ID thì dùng clarify."}
+        check: {type: string, enum: [all, network, vpn, security, hardware, software], default: "all", description: "Luôn gửi trường này. Chọn nhóm cụ thể từ triệu chứng/ngữ cảnh; all khi kiểm tra tổng thể. Không bỏ trường để dựa vào default."}
       required: [asset_id]
 
   - name: lookup_user
