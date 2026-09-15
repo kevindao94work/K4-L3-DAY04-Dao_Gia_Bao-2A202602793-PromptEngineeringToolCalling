@@ -123,8 +123,15 @@ UI chỉ nghe loopback; không phải dịch vụ dùng chung trên Internet. Kh
 - Chỉ nhập dữ liệu giả lập. Không nhập credential. Tra cứu web chỉ chấp nhận hãng/model công khai khớp danh mục lab; cần `TAVILY_API_KEY` riêng nếu sử dụng. Các demo chính không cần web search.
 - UI dùng runtime `chat-ui-v2` bổ sung kiểm tra xác nhận/schema và xử lý nhiều vòng tool. Đây là code mới sau thí nghiệm; điểm v3 của `run_eval.py` không phải điểm an toàn của UI.
 
-### Checklist nhờ thành viên khác kiểm tra khởi động
+### Kiểm tra khởi động — nhóm một thành viên
 
-Một thành viên khác làm đúng các lệnh trên, mở trang, gửi `Kiểm tra trạng thái SSO production.`, kiểm tra tool/result/version và tải JSON.
-Ghi **tên người kiểm tra, OS, thời điểm, nguyên lệnh, kết quả hoặc lỗi** vào `starter_v0/artifacts/analysis/teammate_startup_check.md`.
-Hiện chưa nhận được xác nhận từ thành viên khác; kiểm thử tự động/kiểm tra của AI không thay thế bước này.
+Đào Gia Bảo phụ trách toàn bộ công việc. Không có thành viên thứ hai để peer-check; không coi kiểm tra của Codex là peer-check.
+Bảo làm theo các lệnh trên, gửi `Kiểm tra trạng thái SSO production.`, xem tool/result/version và tải transcript.
+Ghi kết quả thật tại [startup check](starter_v0/artifacts/analysis/teammate_startup_check.md).
+
+## Hồ sơ nộp và demo
+
+- [TEAM và đóng góp](TEAM.md)
+- [REPORT và toàn bộ evidence](starter_v0/artifacts/REPORT.md)
+- [Demo v0 → sửa → kết quả → giới hạn, kèm fallback offline](DEMO.md)
+- URL trang gốc nộp VLearn: https://github.com/kevindao94work/K4-L3-DAY04-Dao_Gia_Bao-2A202602793-PromptEngineeringToolCalling

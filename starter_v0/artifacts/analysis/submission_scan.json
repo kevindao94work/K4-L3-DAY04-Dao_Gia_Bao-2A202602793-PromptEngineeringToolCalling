@@ -1,0 +1,7 @@
+{
+  "working_tree_hits": [],
+  "history_hits": [],
+  "forbidden_history_paths": [],
+  "tracked_files_checked": 125,
+  "limitations": "Pattern scan is not exhaustive; fixture password in fixed adversarial test is synthetic."
+}

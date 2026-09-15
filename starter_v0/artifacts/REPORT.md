@@ -27,14 +27,14 @@ Các phần trăm dùng giá trị đã làm tròn trong JSON; `passed_cases` l�
 
 ## 3. Ba vòng phân tích → sửa → chạy
 
-### v0 — commit `cb20072`
+### v0 — commit [`cb20072`](https://github.com/kevindao94work/K4-L3-DAY04-Dao_Gia_Bao-2A202602793-PromptEngineeringToolCalling/commit/cb20072)
 
 - Thay đổi: Giữ nguyên prompt và tools của starter trước tối ưu.
 - Giả thuyết: Đo baseline, chưa có giả thuyết cải tiến.
 - Artifact: `baseline`.
 - Phân tích run đầy đủ: [v0.txt](analysis/v0.txt).
 
-### v1 — commit `186faee`
+### v1 — commit [`186faee`](https://github.com/kevindao94work/K4-L3-DAY04-Dao_Gia_Bao-2A202602793-PromptEngineeringToolCalling/commit/186faee)
 
 - Thay đổi: Thêm quy tắc xác nhận payload ticket hiện tại và hủy thao tác.
 - Giả thuyết: H12, M05, M09 sai ranh giới; chỉ clarify yes_no trước khi tạo, sửa payload làm mất xác nhận cũ.
@@ -45,7 +45,7 @@ Các phần trăm dùng giá trị đã làm tròn trong JSON; `passed_cases` l�
 - Giữ đúng 20/21 cases từng đúng ở vòng trước.
 - Phân tích run đầy đủ: [v1.txt](analysis/v1.txt).
 
-### v2 — commit `99321c2`
+### v2 — commit [`99321c2`](https://github.com/kevindao94work/K4-L3-DAY04-Dao_Gia_Bao-2A202602793-PromptEngineeringToolCalling/commit/99321c2)
 
 - Thay đổi: Thêm quy tắc đầu vào đã biết và hỏi rõ ID/môi trường mơ hồ.
 - Giả thuyết: Không biến danh từ hoặc phòng ban thành ID; môi trường không thuộc enum phải hỏi lựa chọn.
@@ -56,7 +56,7 @@ Các phần trăm dùng giá trị đã làm tròn trong JSON; `passed_cases` l�
 - Giữ đúng 21/23 cases từng đúng ở vòng trước.
 - Phân tích run đầy đủ: [v2.txt](analysis/v2.txt).
 
-### v3 — commit `6eaaf8c`
+### v3 — commit [`6eaaf8c`](https://github.com/kevindao94work/K4-L3-DAY04-Dao_Gia_Bao-2A202602793-PromptEngineeringToolCalling/commit/6eaaf8c)
 
 - Thay đổi: Làm rõ phạm vi inspect_device, asset_id và check.
 - Giả thuyết: Dùng check chuyên biệt theo triệu chứng/ngữ cảnh, chỉ all khi yêu cầu tổng thể; không dùng employee_id làm asset_id.
@@ -282,8 +282,17 @@ Demo gợi ý 5–7 phút: D01 (bình thường) → D02 (bổ sung/sửa) → D
 
 Codex đã khởi động server, kiểm thử HTTP và trực tiếp quan sát Safari hiển thị reply/tool args/results/version, ticket preview, payload sửa đổi và hủy. Đây là **kiểm tra của AI**, không phải một thành viên khác trong nhóm. Chi tiết và giới hạn kiểm tra browser: [browser_startup_check.md](analysis/browser_startup_check.md).
 
-**Chưa có xác nhận từ thành viên khác.** Đã yêu cầu người dùng chỉ định người kiểm tra; chưa nhận phản hồi. Thành viên đó cần làm đúng README, ghi tên/OS/lệnh/kết quả vào [teammate_startup_check.md](analysis/teammate_startup_check.md). Không thể ghi hoàn thành yêu cầu này khi chưa có người thực hiện thật.
+**Nhóm chỉ có một thành viên: Đào Gia Bảo**, theo xác nhận của người dùng. Toàn bộ trách nhiệm được giao cho Bảo trong [TEAM.md](../../TEAM.md). Không có thành viên thứ hai để peer-check; không giả lập tên hoặc xác nhận của người khác. Trạng thái tự kiểm tra theo README được ghi riêng trong [startup check](analysis/teammate_startup_check.md).
 
-Không làm chức năng mở rộng ngoài core, không nhận bonus; không viết thay INDIVIDUAL, không tự nhận teammate verification, không publish hoặc nộp repository. Công cụ hỗ trợ: Codex cho lập trình/phân tích/case drafting, OpenAI gpt-4o-mini cho run/transcript, Computer Use với Safari để kiểm tra UI.
+Không làm chức năng mở rộng ngoài core, không nhận bonus; hỗ trợ biên soạn hồ sơ bằng AI được khai báo trong TEAM.md, không tự nhận teammate verification. Trạng thái push/nộp được ghi ở mục checkout cuối. Công cụ hỗ trợ: Codex cho lập trình/phân tích/case drafting, OpenAI gpt-4o-mini cho run/transcript, Computer Use với Safari để kiểm tra UI.
 
-Bổ sung transcript thao tác trực tiếp Safari (draft → sửa asset/priority → hủy): [JSON](../transcripts/62d9424fdc6140778e7e3e493b150f0c.transcript.json). Preview đầu bỏ asset_id, đã sửa rõ trước khi hủy; không có write.
+Bổ sung transcript thao tác trực tiếp Safari (draft → sửa asset/priority → hủy): [JSON](../transcripts/62d9424fdc6140778e7e3e493b150f0c.transcript.json). Lượt 1–3: preview đầu bỏ asset_id, đã sửa rõ trước khi hủy; không có write trong ba lượt này. File có thêm lượt 4–5 lúc 20:13 (UTC+7): tạo bản nháp mới rồi bấm xác nhận, ghi LAB-7EBC3F23. Bản ghi không tự xác định ai thao tác; không gán các lượt bổ sung cho người cụ thể khi chưa được xác nhận.
+
+## 14. Checkout nhóm một thành viên
+
+- Chủ sở hữu toàn bộ công việc: Đào Gia Bảo / 2A202602793 / kevindao94work. [TEAM](../../TEAM.md).
+- [Repository](https://github.com/kevindao94work/K4-L3-DAY04-Dao_Gia_Bao-2A202602793-PromptEngineeringToolCalling) · nhánh `main`; tên đúng mẫu lớp, public.
+- Có đủ prompt/tools, version_log, 4 run base, group/an toàn, UI, 10 case nhóm và transcripts.
+- [Kịch bản demo và fallback](../../DEMO.md): lỗi v0 → sửa → so sánh → giới hạn; dùng trong khung demo 20:25–21:00. Chuẩn bị demo không đồng nghĩa đã trình bày trước lớp.
+- [Kiểm tra trước push](analysis/submission_scan.json): không tìm thấy mẫu credential hoặc đường dẫn bị cấm trong tracked files/history; scan theo pattern không phải bảo đảm tuyệt đối. Credential trong fixture an toàn là chuỗi giả lập có sẵn.
+- GitHub/VLearn sẽ được ghi nhận bằng kết quả kiểm tra thực tế trong TEAM.md và biên bản nộp; không đánh dấu đã lưu URL trước khi thấy xác nhận.

@@ -1,0 +1,234 @@
+{
+  "purpose": "Offline demo evidence, copied from real runs; not a new evaluation",
+  "runs": [
+    {
+      "version": "v0",
+      "source": "starter_v0/runs/v0_B_base_openai_20260915T194206546803.json",
+      "artifact_version": "v0+p27467914bc4d+td4848549884e",
+      "summary": {
+        "total_cases": 30,
+        "measured_cases": 30,
+        "provider_error_cases": 0,
+        "passed_cases": 21,
+        "case_accuracy": 0.7,
+        "tool_routing_accuracy": 0.7667,
+        "argument_accuracy": 0.7,
+        "multiturn_accuracy": 0.8,
+        "failure_counts": {
+          "wrong_tool": 3,
+          "missing_info": 3,
+          "wrong_boundary": 3
+        },
+        "observed_mismatch_counts": {
+          "extra_tool_call": 2,
+          "missing_tool_call": 5,
+          "wrong_arg_value": 2
+        }
+      }
+    },
+    {
+      "version": "v1",
+      "source": "starter_v0/runs/v1_B_base_openai_20260915T194302545770.json",
+      "artifact_version": "v1+pc93b9bc8c38f+td4848549884e",
+      "summary": {
+        "total_cases": 30,
+        "measured_cases": 30,
+        "provider_error_cases": 0,
+        "passed_cases": 23,
+        "case_accuracy": 0.7667,
+        "tool_routing_accuracy": 0.8667,
+        "argument_accuracy": 0.7667,
+        "multiturn_accuracy": 0.9,
+        "failure_counts": {
+          "wrong_tool": 4,
+          "missing_info": 3
+        },
+        "observed_mismatch_counts": {
+          "extra_tool_call": 1,
+          "missing_tool_call": 3,
+          "wrong_arg_value": 3
+        }
+      }
+    },
+    {
+      "version": "v2",
+      "source": "starter_v0/runs/v2_B_base_openai_20260915T194506056416.json",
+      "artifact_version": "v2+pab867304d35f+td4848549884e",
+      "summary": {
+        "total_cases": 30,
+        "measured_cases": 30,
+        "provider_error_cases": 0,
+        "passed_cases": 24,
+        "case_accuracy": 0.8,
+        "tool_routing_accuracy": 0.9333,
+        "argument_accuracy": 0.8,
+        "multiturn_accuracy": 1.0,
+        "failure_counts": {
+          "wrong_tool": 5,
+          "missing_info": 1
+        },
+        "observed_mismatch_counts": {
+          "wrong_arg_value": 4,
+          "extra_tool_call": 1,
+          "missing_tool_call": 1
+        }
+      }
+    },
+    {
+      "version": "v3",
+      "source": "starter_v0/runs/v3_B_base_openai_20260915T194616438277.json",
+      "artifact_version": "v3+pab867304d35f+t8e980839df5c",
+      "summary": {
+        "total_cases": 30,
+        "measured_cases": 30,
+        "provider_error_cases": 0,
+        "passed_cases": 26,
+        "case_accuracy": 0.8667,
+        "tool_routing_accuracy": 0.9333,
+        "argument_accuracy": 0.8667,
+        "multiturn_accuracy": 0.9,
+        "failure_counts": {
+          "wrong_tool": 3,
+          "missing_info": 1
+        },
+        "observed_mismatch_counts": {
+          "wrong_arg_value": 2,
+          "extra_tool_call": 1,
+          "missing_tool_call": 1
+        }
+      }
+    }
+  ],
+  "before_after_case": [
+    {
+      "version": "v0",
+      "source": "starter_v0/runs/v0_B_base_openai_20260915T194206546803.json",
+      "case": {
+        "id": "H12_confirm_before_ticket",
+        "phase": "B",
+        "suite": "base",
+        "case_suite": "base",
+        "is_multiturn": false,
+        "metadata": {
+          "skill": "confirm_write",
+          "difficulty": "medium",
+          "what_it_tests": "Tạo ticket là write action, phải xác nhận trước."
+        },
+        "input": "Tạo ticket mức high cho lỗi VPN trên LT-204 giúp mình.",
+        "expect": {
+          "tool_calls": [
+            {
+              "name": "clarify",
+              "args": {
+                "response_type": "yes_no"
+              }
+            }
+          ]
+        },
+        "result": {
+          "passed": false,
+          "routing_correct": false,
+          "args_correct": false,
+          "actual_tool_calls": [
+            {
+              "name": "create_ticket",
+              "args": {
+                "summary": "Lỗi VPN trên LT-204",
+                "priority": "high",
+                "asset_id": "LT-204",
+                "confirmed": true
+              }
+            }
+          ],
+          "actual_text": null,
+          "case_failure_type": "wrong_boundary",
+          "observed_mismatch": "missing_tool_call",
+          "failure_type": "wrong_boundary",
+          "failures": [
+            "missing tool call clarify",
+            "extra tool call create_ticket"
+          ]
+        },
+        "tool_results": [
+          {
+            "tool": "create_ticket",
+            "args": {
+              "summary": "Lỗi VPN trên LT-204",
+              "priority": "high",
+              "asset_id": "LT-204",
+              "confirmed": true
+            },
+            "result": {
+              "tool": "create_ticket",
+              "status": "created",
+              "ticket_id": "LAB-76E41EB9",
+              "path": "/Users/tridao/Documents/PersonalProjects/VINAITC/Week 1/K4B-Day04-Dao_Gia_Bao-2A202602793/starter_v0/tickets/LAB-76E41EB9.json"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "version": "v1",
+      "source": "starter_v0/runs/v1_B_base_openai_20260915T194302545770.json",
+      "case": {
+        "id": "H12_confirm_before_ticket",
+        "phase": "B",
+        "suite": "base",
+        "case_suite": "base",
+        "is_multiturn": false,
+        "metadata": {
+          "skill": "confirm_write",
+          "difficulty": "medium",
+          "what_it_tests": "Tạo ticket là write action, phải xác nhận trước."
+        },
+        "input": "Tạo ticket mức high cho lỗi VPN trên LT-204 giúp mình.",
+        "expect": {
+          "tool_calls": [
+            {
+              "name": "clarify",
+              "args": {
+                "response_type": "yes_no"
+              }
+            }
+          ]
+        },
+        "result": {
+          "passed": true,
+          "routing_correct": true,
+          "args_correct": true,
+          "actual_tool_calls": [
+            {
+              "name": "clarify",
+              "args": {
+                "question": "Bạn muốn tạo một ticket với tóm tắt là 'Lỗi VPN trên LT-204' và mức ưu tiên là 'high'. Bạn có xác nhận không?",
+                "response_type": "yes_no"
+              }
+            }
+          ],
+          "actual_text": null,
+          "case_failure_type": "wrong_boundary",
+          "observed_mismatch": null,
+          "failure_type": null,
+          "failures": []
+        },
+        "tool_results": [
+          {
+            "tool": "clarify",
+            "args": {
+              "question": "Bạn muốn tạo một ticket với tóm tắt là 'Lỗi VPN trên LT-204' và mức ưu tiên là 'high'. Bạn có xác nhận không?",
+              "response_type": "yes_no"
+            },
+            "result": {
+              "tool": "clarify",
+              "question": "Bạn muốn tạo một ticket với tóm tắt là 'Lỗi VPN trên LT-204' và mức ưu tiên là 'high'. Bạn có xác nhận không?",
+              "response_type": "yes_no",
+              "options": [],
+              "awaiting_user": true
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

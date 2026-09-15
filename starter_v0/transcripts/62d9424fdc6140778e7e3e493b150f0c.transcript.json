@@ -151,7 +151,105 @@
       "assistant_text": "Đã hủy yêu cầu đang chờ. Không tạo ticket.",
       "status": "cancelled",
       "ended_at": "2026-09-15T13:07:00+00:00"
+    },
+    {
+      "turn_index": 4,
+      "user": "Soạn ticket mức low cho lỗi máy in PR-404.",
+      "started_at": "2026-09-15T13:13:17+00:00",
+      "rounds": [
+        {
+          "round": 1,
+          "assistant_text": null,
+          "tool_calls": [
+            {
+              "name": "prepare_ticket",
+              "args": {
+                "summary": "Lỗi máy in PR-404",
+                "priority": "low",
+                "asset_id": "PR-404"
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "prepare_ticket",
+              "args": {
+                "summary": "Lỗi máy in PR-404",
+                "priority": "low",
+                "asset_id": "PR-404"
+              },
+              "executed": false,
+              "result": {
+                "status": "pending_confirmation",
+                "payload": {
+                  "summary": "Lỗi máy in PR-404",
+                  "priority": "low",
+                  "asset_id": "PR-404"
+                },
+                "message": "Chưa tạo ticket. Hãy xem nội dung và dùng nút Xác nhận."
+              }
+            }
+          ]
+        }
+      ],
+      "tool_events": [
+        {
+          "tool": "prepare_ticket",
+          "args": {
+            "summary": "Lỗi máy in PR-404",
+            "priority": "low",
+            "asset_id": "PR-404"
+          },
+          "executed": false,
+          "result": {
+            "status": "pending_confirmation",
+            "payload": {
+              "summary": "Lỗi máy in PR-404",
+              "priority": "low",
+              "asset_id": "PR-404"
+            },
+            "message": "Chưa tạo ticket. Hãy xem nội dung và dùng nút Xác nhận."
+          }
+        }
+      ],
+      "invalidated_pending_ticket": false,
+      "assistant_text": "Chưa tạo ticket. Hãy xem nội dung và dùng nút Xác nhận.",
+      "status": "waiting_for_confirmation",
+      "ended_at": "2026-09-15T13:13:19+00:00"
+    },
+    {
+      "turn_index": 5,
+      "user": "[UI: xác nhận đúng payload đang hiển thị]",
+      "confirmed_payload": {
+        "summary": "Lỗi máy in PR-404",
+        "priority": "low",
+        "asset_id": "PR-404"
+      },
+      "started_at": "2026-09-15T13:13:23+00:00",
+      "rounds": [],
+      "tool_events": [
+        {
+          "tool": "create_ticket",
+          "args": {
+            "summary": "Lỗi máy in PR-404",
+            "priority": "low",
+            "asset_id": "PR-404",
+            "confirmed": true
+          },
+          "executed": true,
+          "authorization": "explicit_UI_button_for_exact_payload",
+          "result": {
+            "tool": "create_ticket",
+            "status": "created",
+            "ticket_id": "LAB-7EBC3F23",
+            "path": "/Users/tridao/Documents/PersonalProjects/VINAITC/Week 1/K4B-Day04-Dao_Gia_Bao-2A202602793/starter_v0/tickets/LAB-7EBC3F23.json"
+          }
+        }
+      ],
+      "assistant_text": "Đã tạo ticket giả lập LAB-7EBC3F23",
+      "status": "created",
+      "ended_at": "2026-09-15T13:13:23+00:00"
     }
   ],
-  "updated_at": "2026-09-15T13:07:00+00:00"
+  "updated_at": "2026-09-15T13:13:23+00:00"
 }

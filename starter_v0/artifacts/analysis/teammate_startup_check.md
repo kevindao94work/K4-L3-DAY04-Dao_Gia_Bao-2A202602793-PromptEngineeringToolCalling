@@ -1,14 +1,8 @@
-# Kiểm tra khởi động bởi thành viên khác
+# Kiểm tra khởi động — nhóm một thành viên
 
-**Trạng thái: chờ thành viên khác thực hiện và báo kết quả.**
+Người dùng xác nhận chỉ có Đào Gia Bảo trong nhóm; giao toàn bộ công việc cho Bảo. Không có người thứ hai để peer-check và không khai báo Codex là thành viên.
 
-Không được ghi hoàn thành dựa trên kiểm tra của AI. Thực hiện mục UI chat trong README ở thư mục repository.
-
-- Người kiểm tra:
-- Hệ điều hành:
-- Thời điểm:
-- Nguyên lệnh đã chạy:
-- Mở http://127.0.0.1:8765:
-- Gửi yêu cầu SSO production; thấy tool/args/result/version:
-- Tải transcript JSON:
-- Kết quả/lỗi và cách xử lý:
+- Kiểm tra AI: HTTP/Safari theo browser_startup_check.md và ui_http_checks.json.
+- Tự kiểm tra của Bảo theo README: chờ xác nhận trực tiếp; không suy ra danh tính người thao tác từ transcript.
+- README giữ lệnh thật: `cd starter_v0`, kích hoạt `.venv`, `python ui_server.py --port 8765`, mở http://127.0.0.1:8765.
+- Nếu rubric yêu cầu peer-check độc lập kể cả nhóm một người, cần hỏi Keycoach; không tự nhận được miễn tiêu chí.
