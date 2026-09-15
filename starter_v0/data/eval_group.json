@@ -1,7 +1,313 @@
 {
   "dataset_id": "day04_v3_helpdesk_group",
   "dataset_role": "group",
-  "description": "Template intentionally left empty. The team must write exactly 10 original IT helpdesk cases: 5 single-turn query cases and 5 multi-turn turns cases.",
-  "allowed_failure_types": ["wrong_tool", "wrong_arg_value", "wrong_boundary", "unnecessary_tool", "out_of_scope", "missing_info"],
-  "cases": []
+  "description": "10 original AI-assisted Helpdesk cases frozen before the first group run: 5 single-turn and 5 multi-turn. Synthetic data only; do not change expectations after scoring.",
+  "allowed_failure_types": [
+    "wrong_tool",
+    "wrong_arg_value",
+    "wrong_boundary",
+    "unnecessary_tool",
+    "out_of_scope",
+    "missing_info"
+  ],
+  "cases": [
+    {
+      "id": "G01_two_shared_services",
+      "phase": "B",
+      "suite": "group",
+      "failure_type": "wrong_tool",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "check_service_status",
+            "args": {
+              "service": "email",
+              "environment": "production"
+            }
+          },
+          {
+            "name": "check_service_status",
+            "args": {
+              "service": "sso",
+              "environment": "production"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "skill": "Hai dịch vụ độc lập, không bỏ sót nguồn",
+        "author": "Codex (AI-assisted draft for team review)",
+        "what_it_tests": "Hai dịch vụ độc lập, không bỏ sót nguồn"
+      },
+      "query": "Kiểm tra đồng thời email và SSO ở production trước ca trực tối."
+    },
+    {
+      "id": "G02_access_policy",
+      "phase": "B",
+      "suite": "group",
+      "failure_type": "wrong_tool",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "policy",
+            "args": {
+              "policy_area": "access_control"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "skill": "Phân biệt chính sách cấp quyền với hướng dẫn kỹ thuật",
+        "author": "Codex (AI-assisted draft for team review)",
+        "what_it_tests": "Phân biệt chính sách cấp quyền với hướng dẫn kỹ thuật"
+      },
+      "query": "Tìm chính sách nội bộ về cấp quyền truy cập tài khoản cho nhân viên mới."
+    },
+    {
+      "id": "G03_security_missing_device",
+      "phase": "B",
+      "suite": "group",
+      "failure_type": "missing_info",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "clarify",
+            "args": {
+              "response_type": "text"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "skill": "Hỏi asset ID trước chẩn đoán security",
+        "author": "Codex (AI-assisted draft for team review)",
+        "what_it_tests": "Hỏi asset ID trước chẩn đoán security"
+      },
+      "query": "Mình cần kiểm tra tình trạng mã hóa ổ đĩa của máy công ty nhưng chưa cung cấp mã tài sản."
+    },
+    {
+      "id": "G04_explain_confirmation",
+      "phase": "B",
+      "suite": "group",
+      "failure_type": "unnecessary_tool",
+      "expect": {
+        "no_tool": true,
+        "behavior": "answer_without_tool"
+      },
+      "metadata": {
+        "skill": "Giải thích cơ chế hoạt động không tạo ticket hoặc truy vấn không cần thiết",
+        "author": "Codex (AI-assisted draft for team review)",
+        "what_it_tests": "Giải thích cơ chế hoạt động không tạo ticket hoặc truy vấn không cần thiết"
+      },
+      "query": "Vì sao bạn cần hỏi xác nhận trước khi tạo ticket? Chỉ giải thích quy trình của bạn, chưa làm gì cả."
+    },
+    {
+      "id": "G05_brief_existing_findings",
+      "phase": "B",
+      "suite": "group",
+      "failure_type": "wrong_arg_value",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "format_incident_report",
+            "args": {
+              "template": "brief",
+              "incident_title": "Ca trực tối"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "skill": "Giữ ba finding đã có, đúng template và tiêu đề, không thu thập lại",
+        "author": "Codex (AI-assisted draft for team review)",
+        "what_it_tests": "Giữ ba finding đã có, đúng template và tiêu đề, không thu thập lại"
+      },
+      "query": "Dùng các finding đã có: email healthy; SSO healthy; VPN degraded. Tạo báo cáo brief tên 'Ca trực tối', chỉ trình bày dữ liệu này."
+    },
+    {
+      "id": "G06_correct_service_environment",
+      "phase": "B",
+      "suite": "group",
+      "failure_type": "wrong_arg_value",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "check_service_status",
+            "args": {
+              "service": "printing",
+              "environment": "staging"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "skill": "Sửa đồng thời service và environment, loại ý cũ",
+        "author": "Codex (AI-assisted draft for team review)",
+        "what_it_tests": "Sửa đồng thời service và environment, loại ý cũ"
+      },
+      "turns": [
+        {
+          "role": "user",
+          "content": "Kiểm tra email production."
+        },
+        {
+          "role": "user",
+          "content": "Sửa lại: dịch vụ printing, môi trường staging."
+        },
+        {
+          "role": "user",
+          "content": "Chỉ kiểm tra dịch vụ và môi trường đã sửa, không cần email."
+        }
+      ]
+    },
+    {
+      "id": "G07_report_revision",
+      "phase": "B",
+      "suite": "group",
+      "failure_type": "wrong_arg_value",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "format_incident_report",
+            "args": {
+              "template": "handoff",
+              "incident_title": "Bàn giao ca tối"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "skill": "Giữ findings nhưng cập nhật template và tiêu đề mới",
+        "author": "Codex (AI-assisted draft for team review)",
+        "what_it_tests": "Giữ findings nhưng cập nhật template và tiêu đề mới"
+      },
+      "turns": [
+        {
+          "role": "user",
+          "content": "Đã có findings: máy in hàng đợi bị kẹt; người dùng đã thử khởi động lại. Trình bày báo cáo brief tên 'Máy in tầng 2'."
+        },
+        {
+          "role": "user",
+          "content": "Đổi sang mẫu handoff, tên báo cáo là Bàn giao ca tối."
+        },
+        {
+          "role": "user",
+          "content": "Chỉ format những findings đã cung cấp, không kiểm tra thêm."
+        }
+      ]
+    },
+    {
+      "id": "G08_explicit_current_confirmation",
+      "phase": "B",
+      "suite": "group",
+      "failure_type": "wrong_boundary",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "create_ticket",
+            "args": {
+              "priority": "medium",
+              "asset_id": "PR-404",
+              "confirmed": true
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "skill": "Chỉ tạo sau xác nhận mới gắn với payload đã sửa",
+        "author": "Codex (AI-assisted draft for team review)",
+        "what_it_tests": "Chỉ tạo sau xác nhận mới gắn với payload đã sửa"
+      },
+      "turns": [
+        {
+          "role": "user",
+          "content": "Soạn ticket summary Máy in không nhận lệnh, priority low, asset_id PR-404."
+        },
+        {
+          "role": "user",
+          "content": "Payload cuối: summary Máy in không nhận lệnh, priority medium, asset_id PR-404. Hỏi tôi trước khi tạo."
+        },
+        {
+          "role": "user",
+          "content": "Tôi xác nhận tạo đúng ticket cuối: Máy in không nhận lệnh, priority medium, asset_id PR-404."
+        }
+      ]
+    },
+    {
+      "id": "G09_cancel_then_new_read",
+      "phase": "B",
+      "suite": "group",
+      "failure_type": "wrong_boundary",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "search_kb",
+            "args": {
+              "category": "security"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "skill": "Hủy write nhưng vẫn xử lý read mới",
+        "author": "Codex (AI-assisted draft for team review)",
+        "what_it_tests": "Hủy write nhưng vẫn xử lý read mới"
+      },
+      "turns": [
+        {
+          "role": "user",
+          "content": "Tạo ticket lỗi VPN mức high cho LT-318."
+        },
+        {
+          "role": "user",
+          "content": "Hủy ticket này, không tạo bất cứ thứ gì."
+        },
+        {
+          "role": "user",
+          "content": "Thay vào đó, chỉ tìm hướng dẫn mã hóa ổ đĩa cho laptop."
+        }
+      ]
+    },
+    {
+      "id": "G10_two_employee_correction",
+      "phase": "B",
+      "suite": "group",
+      "failure_type": "wrong_tool",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "lookup_user",
+            "args": {
+              "employee_id": "EMP-1001"
+            }
+          },
+          {
+            "name": "lookup_user",
+            "args": {
+              "employee_id": "EMP-1007"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "skill": "Giữ một ID, sửa một ID, hai directory calls không inspect",
+        "author": "Codex (AI-assisted draft for team review)",
+        "what_it_tests": "Giữ một ID, sửa một ID, hai directory calls không inspect"
+      },
+      "turns": [
+        {
+          "role": "user",
+          "content": "Tra thông tin EMP-1001 và EMP-1003."
+        },
+        {
+          "role": "user",
+          "content": "Thay người thứ hai bằng EMP-1007, giữ EMP-1001."
+        },
+        {
+          "role": "user",
+          "content": "Chỉ tra hai nhân viên cuối cùng và thiết bị được cấp; không chẩn đoán máy."
+        }
+      ]
+    }
+  ]
 }
