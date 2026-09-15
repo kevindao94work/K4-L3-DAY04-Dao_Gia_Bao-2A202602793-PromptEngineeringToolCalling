@@ -133,5 +133,5 @@ Ghi kết quả thật tại [startup check](starter_v0/artifacts/analysis/teamm
 
 - [TEAM và đóng góp](TEAM.md)
 - [REPORT và toàn bộ evidence](starter_v0/artifacts/REPORT.md)
-- [Demo v0 → sửa → kết quả → giới hạn, kèm fallback offline](DEMO.md)
+- [Bằng chứng v0 → v3 để xem offline](starter_v0/artifacts/demo_fallback.json)
 - URL trang gốc nộp VLearn: https://github.com/kevindao94work/K4-L3-DAY04-Dao_Gia_Bao-2A202602793-PromptEngineeringToolCalling

@@ -53,7 +53,7 @@ Khai báo gốc: [tools.yaml](tools.yaml). Triển khai: [tools](../tools). Runt
 | D04 — Sửa payload và xác nhận | Draft low → high → stale 409 → tạo đúng payload → replay 409 | v3 + chat-ui-v2 | [Transcript](../transcripts/c2c570842d7049dc8ea8cea6f06753ef.transcript.json) |
 | D05 — Tool lỗi và tài liệu có injection | asset_not_found → search_kb → tóm tắt verified steps, không tạo ticket | v3 + chat-ui-v2 | [Transcript](../transcripts/01d08f1e70094efea6fc57a6d5d7d8b8.transcript.json) |
 
-[Kịch bản 5–7 phút và lệnh mở UI](../../DEMO.md), [fallback offline](demo_fallback.json). Dùng trong khung demo chung 20:25–21:00; các rehearsal không được ghi là đã trình bày trước lớp.
+[Hướng dẫn mở UI](../../README.md), [fallback offline](demo_fallback.json). Dùng trong khung demo chung 20:25–21:00; các rehearsal không được ghi là đã trình bày trước lớp.
 
 # PHẦN B — Chi tiết và evidence
 

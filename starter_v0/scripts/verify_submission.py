@@ -11,7 +11,7 @@ def check():
     def require(ok,label):
         if not ok:raise AssertionError(label)
         checked.append(label)
-    for file in ['TEAM.md','README.md','DEMO.md','starter_v0/artifacts/REPORT.md','starter_v0/artifacts/system_prompt.md','starter_v0/artifacts/tools.yaml','starter_v0/artifacts/version_log.csv','starter_v0/ui_server.py','starter_v0/chat_runtime.py','starter_v0/ui/index.html']:
+    for file in ['TEAM.md','README.md','starter_v0/artifacts/REPORT.md','starter_v0/artifacts/system_prompt.md','starter_v0/artifacts/tools.yaml','starter_v0/artifacts/version_log.csv','starter_v0/ui_server.py','starter_v0/chat_runtime.py','starter_v0/ui/index.html']:
         require((ROOT/file).is_file(),'Required file: '+file)
     for suite,number,multi in [('base',30,10),('adversarial',12,2),('group',10,5)]:
         p=LAB/'data'/('eval_'+suite+'.json');d=json.loads(p.read_text())
@@ -37,7 +37,7 @@ def check():
         d=json.loads((LAB/scenario['transcript']).read_text())
         require(bool(d['turns']) and all(t['status']!='provider_error' for t in d['turns']),'Live transcript: '+scenario['scenario'])
         require(d['runtime_code_hash']==sha(LAB/'chat_runtime.py'),'Runtime hash: '+scenario['scenario'])
-    for doc in ['TEAM.md','README.md','DEMO.md','starter_v0/artifacts/REPORT.md']:
+    for doc in ['TEAM.md','README.md','starter_v0/artifacts/REPORT.md']:
         p=ROOT/doc
         for target in re.findall(r'\]\(([^)]+)\)',p.read_text()):
             if target.startswith(('http://','https://','#')):continue
