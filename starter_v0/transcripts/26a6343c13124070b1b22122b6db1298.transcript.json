@@ -1,0 +1,214 @@
+{
+  "transcript_id": "26a6343c13124070b1b22122b6db1298",
+  "version": "v3",
+  "artifact_version": "v3+pab867304d35f+t8e980839df5c",
+  "prompt_hash": "ab867304d35fcfcaed964450849eff75026a88d3230285b44e20cf6b3b75a224",
+  "tools_hash": "8e980839df5cfc2f694134ef61237b15ec3c17d4a60180c57f601d68da80fb59",
+  "runtime_version": "chat-ui-v2",
+  "runtime_policy_hash": "1826ce51269abf6c296d21e6a9ad55b76e49f2bfabbcc36a03d9786557d5549c",
+  "runtime_code_hash": "65b7144ecb994923b74ec79c22fdcd6c6a4e42372926e796c104609ffa0f4d9c",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "created_at": "2026-09-15T13:05:25+00:00",
+  "turns": [
+    {
+      "turn_index": 1,
+      "user": "Kiểm tra riêng kết nối VPN trên laptop của mình.",
+      "started_at": "2026-09-15T13:05:25+00:00",
+      "rounds": [
+        {
+          "round": 1,
+          "assistant_text": "Vui lòng cung cấp ID tài sản (asset ID) của laptop để tôi có thể kiểm tra kết nối VPN.",
+          "tool_calls": [],
+          "tool_results": []
+        }
+      ],
+      "tool_events": [],
+      "invalidated_pending_ticket": false,
+      "assistant_text": "Vui lòng cung cấp ID tài sản (asset ID) của laptop để tôi có thể kiểm tra kết nối VPN.",
+      "status": "answered",
+      "ended_at": "2026-09-15T13:05:27+00:00"
+    },
+    {
+      "turn_index": 2,
+      "user": "Mã tài sản là LT-204.",
+      "started_at": "2026-09-15T13:05:27+00:00",
+      "rounds": [
+        {
+          "round": 1,
+          "assistant_text": null,
+          "tool_calls": [
+            {
+              "name": "inspect_device",
+              "args": {
+                "asset_id": "LT-204",
+                "check": "vpn"
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "inspect_device",
+              "args": {
+                "asset_id": "LT-204",
+                "check": "vpn"
+              },
+              "executed": true,
+              "result": {
+                "tool": "inspect_device",
+                "asset_id": "LT-204",
+                "check": "vpn",
+                "device": {
+                  "asset_id": "LT-204",
+                  "manufacturer": "Lenovo",
+                  "type": "laptop",
+                  "model": "ThinkPad T14 Gen 4",
+                  "os": "Windows 11 23H2",
+                  "assigned_to": "EMP-1001",
+                  "location": "Bangkok floor 3",
+                  "purchase_date": "2024-02-12",
+                  "warranty_until": "2027-02-11"
+                },
+                "diagnostics": {
+                  "vpn": "client 5.2.1; last connection failed with AUTH_TIMEOUT"
+                },
+                "snapshot_at": "2026-09-14T09:00:00+07:00"
+              }
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "assistant_text": "Kết quả kiểm tra kết nối VPN trên laptop của bạn (ID tài sản: LT-204) như sau:\n\n- **Mẫu máy**: Lenovo ThinkPad T14 Gen 4\n- **Hệ điều hành**: Windows 11 23H2\n- **Trạng thái VPN**: Kết nối VPN đã thất bại lần cuối với lỗi AUTH_TIMEOUT.\n\nNếu bạn cần hỗ trợ thêm để khắc phục sự cố này, hãy cho tôi biết!",
+          "tool_calls": [],
+          "tool_results": []
+        }
+      ],
+      "tool_events": [
+        {
+          "tool": "inspect_device",
+          "args": {
+            "asset_id": "LT-204",
+            "check": "vpn"
+          },
+          "executed": true,
+          "result": {
+            "tool": "inspect_device",
+            "asset_id": "LT-204",
+            "check": "vpn",
+            "device": {
+              "asset_id": "LT-204",
+              "manufacturer": "Lenovo",
+              "type": "laptop",
+              "model": "ThinkPad T14 Gen 4",
+              "os": "Windows 11 23H2",
+              "assigned_to": "EMP-1001",
+              "location": "Bangkok floor 3",
+              "purchase_date": "2024-02-12",
+              "warranty_until": "2027-02-11"
+            },
+            "diagnostics": {
+              "vpn": "client 5.2.1; last connection failed with AUTH_TIMEOUT"
+            },
+            "snapshot_at": "2026-09-14T09:00:00+07:00"
+          }
+        }
+      ],
+      "invalidated_pending_ticket": false,
+      "assistant_text": "Kết quả kiểm tra kết nối VPN trên laptop của bạn (ID tài sản: LT-204) như sau:\n\n- **Mẫu máy**: Lenovo ThinkPad T14 Gen 4\n- **Hệ điều hành**: Windows 11 23H2\n- **Trạng thái VPN**: Kết nối VPN đã thất bại lần cuối với lỗi AUTH_TIMEOUT.\n\nNếu bạn cần hỗ trợ thêm để khắc phục sự cố này, hãy cho tôi biết!",
+      "status": "answered",
+      "ended_at": "2026-09-15T13:05:30+00:00"
+    },
+    {
+      "turn_index": 3,
+      "user": "Mình nhầm mã: LT-318 mới đúng. Chỉ kiểm tra VPN trên mã mới, không kiểm tra LT-204 nữa.",
+      "started_at": "2026-09-15T13:05:30+00:00",
+      "rounds": [
+        {
+          "round": 1,
+          "assistant_text": null,
+          "tool_calls": [
+            {
+              "name": "inspect_device",
+              "args": {
+                "asset_id": "LT-318",
+                "check": "vpn"
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "inspect_device",
+              "args": {
+                "asset_id": "LT-318",
+                "check": "vpn"
+              },
+              "executed": true,
+              "result": {
+                "tool": "inspect_device",
+                "asset_id": "LT-318",
+                "check": "vpn",
+                "device": {
+                  "asset_id": "LT-318",
+                  "manufacturer": "Apple",
+                  "type": "laptop",
+                  "model": "MacBook Pro 14-inch M3",
+                  "os": "macOS 15.0",
+                  "assigned_to": "EMP-1005",
+                  "location": "Singapore floor 6",
+                  "purchase_date": "2024-01-18",
+                  "warranty_until": "2027-01-17"
+                },
+                "diagnostics": {
+                  "vpn": "client 5.1.8; certificate expires in 5 days"
+                },
+                "snapshot_at": "2026-09-14T09:00:00+07:00"
+              }
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "assistant_text": "Kết quả kiểm tra kết nối VPN trên laptop của bạn (ID tài sản: LT-318) như sau:\n\n- **Mẫu máy**: Apple MacBook Pro 14-inch M3\n- **Hệ điều hành**: macOS 15.0\n- **Trạng thái VPN**: Kết nối VPN đang sử dụng client 5.1.8; chứng chỉ sẽ hết hạn trong 5 ngày.\n\nNếu bạn cần hỗ trợ thêm để gia hạn chứng chỉ hoặc khắc phục sự cố, hãy cho tôi biết!",
+          "tool_calls": [],
+          "tool_results": []
+        }
+      ],
+      "tool_events": [
+        {
+          "tool": "inspect_device",
+          "args": {
+            "asset_id": "LT-318",
+            "check": "vpn"
+          },
+          "executed": true,
+          "result": {
+            "tool": "inspect_device",
+            "asset_id": "LT-318",
+            "check": "vpn",
+            "device": {
+              "asset_id": "LT-318",
+              "manufacturer": "Apple",
+              "type": "laptop",
+              "model": "MacBook Pro 14-inch M3",
+              "os": "macOS 15.0",
+              "assigned_to": "EMP-1005",
+              "location": "Singapore floor 6",
+              "purchase_date": "2024-01-18",
+              "warranty_until": "2027-01-17"
+            },
+            "diagnostics": {
+              "vpn": "client 5.1.8; certificate expires in 5 days"
+            },
+            "snapshot_at": "2026-09-14T09:00:00+07:00"
+          }
+        }
+      ],
+      "invalidated_pending_ticket": false,
+      "assistant_text": "Kết quả kiểm tra kết nối VPN trên laptop của bạn (ID tài sản: LT-318) như sau:\n\n- **Mẫu máy**: Apple MacBook Pro 14-inch M3\n- **Hệ điều hành**: macOS 15.0\n- **Trạng thái VPN**: Kết nối VPN đang sử dụng client 5.1.8; chứng chỉ sẽ hết hạn trong 5 ngày.\n\nNếu bạn cần hỗ trợ thêm để gia hạn chứng chỉ hoặc khắc phục sự cố, hãy cho tôi biết!",
+      "status": "answered",
+      "ended_at": "2026-09-15T13:05:33+00:00"
+    }
+  ],
+  "updated_at": "2026-09-15T13:05:33+00:00"
+}

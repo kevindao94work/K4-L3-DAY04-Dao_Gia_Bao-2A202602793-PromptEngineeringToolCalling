@@ -1,0 +1,81 @@
+{
+  "transcript_id": "95b8ea8003fe4f78bcce35a7c1ce6f92",
+  "version": "v3",
+  "artifact_version": "v3+pab867304d35f+t8e980839df5c",
+  "prompt_hash": "ab867304d35fcfcaed964450849eff75026a88d3230285b44e20cf6b3b75a224",
+  "tools_hash": "8e980839df5cfc2f694134ef61237b15ec3c17d4a60180c57f601d68da80fb59",
+  "runtime_version": "chat-ui-v1",
+  "runtime_policy_hash": "9e21d936ae3f5eed59229c95bdb3e37d17613d4d5899eda4da438e3d08c717c4",
+  "runtime_code_hash": "9dc74d7e4926d394550dd85dfb197e0f432ef041d1419d14915f69aa753fde92",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "created_at": "2026-09-15T13:03:21+00:00",
+  "turns": [
+    {
+      "turn_index": 1,
+      "user": "Soạn ticket summary Máy in bị kẹt hàng đợi, priority low, asset_id PR-404 để tôi xem trước.",
+      "started_at": "2026-09-15T13:03:21+00:00",
+      "rounds": [
+        {
+          "round": 1,
+          "assistant_text": "{\n  \"intent\": \"create_ticket\",\n  \"action\": \"clarify\",\n  \"reply\": \"Tóm tắt sự cố của bạn là \\\"Máy in bị kẹt hàng đợi\\\", mức ưu tiên là \\\"low\\\" và mã tài sản là \\\"PR-404\\\". Bạn có muốn tạo ticket với thông tin này không?\",\n  \"evidence_ids\": []\n}",
+          "tool_calls": [],
+          "tool_results": []
+        }
+      ],
+      "tool_events": [],
+      "invalidated_pending_ticket": false,
+      "assistant_text": "{\n  \"intent\": \"create_ticket\",\n  \"action\": \"clarify\",\n  \"reply\": \"Tóm tắt sự cố của bạn là \\\"Máy in bị kẹt hàng đợi\\\", mức ưu tiên là \\\"low\\\" và mã tài sản là \\\"PR-404\\\". Bạn có muốn tạo ticket với thông tin này không?\",\n  \"evidence_ids\": []\n}",
+      "status": "answered",
+      "ended_at": "2026-09-15T13:03:23+00:00"
+    },
+    {
+      "turn_index": 2,
+      "user": "Hãy chuẩn bị bản nháp ticket theo nội dung vừa nêu để tôi xem payload và dùng nút xác nhận của UI; chưa ghi dữ liệu.",
+      "started_at": "2026-09-15T13:03:23+00:00",
+      "rounds": [
+        {
+          "round": 1,
+          "assistant_text": "{\"reply\": \"{\\n  \\\"intent\\\": \\\"create_ticket\\\",\\n  \\\"action\\\": \\\"clarify\\\",\\n  \\\"reply\\\": \\\"Tóm tắt sự cố của bạn là \\\\\\\"Máy in bị kẹt hàng đợi\\\\\\\", mức ưu tiên là \\\\\\\"low\\\\\\\" và mã tài sản là \\\\\\\"PR-404\\\\\\\". Bạn có muốn xác nhận để tạo ticket với thông tin này không?\\\",\\n  \\\"evidence_ids\\\": []\\n}\", \"tool_evidence\": []}",
+          "tool_calls": [],
+          "tool_results": []
+        }
+      ],
+      "tool_events": [],
+      "invalidated_pending_ticket": false,
+      "assistant_text": "{\"reply\": \"{\\n  \\\"intent\\\": \\\"create_ticket\\\",\\n  \\\"action\\\": \\\"clarify\\\",\\n  \\\"reply\\\": \\\"Tóm tắt sự cố của bạn là \\\\\\\"Máy in bị kẹt hàng đợi\\\\\\\", mức ưu tiên là \\\\\\\"low\\\\\\\" và mã tài sản là \\\\\\\"PR-404\\\\\\\". Bạn có muốn xác nhận để tạo ticket với thông tin này không?\\\",\\n  \\\"evidence_ids\\\": []\\n}\", \"tool_evidence\": []}",
+      "status": "answered",
+      "ended_at": "2026-09-15T13:03:25+00:00"
+    },
+    {
+      "turn_index": 3,
+      "user": "Hủy yêu cầu đang chờ. Không tạo ticket.",
+      "started_at": "2026-09-15T13:03:25+00:00",
+      "rounds": [],
+      "tool_events": [],
+      "invalidated_pending_ticket": false,
+      "assistant_text": "Đã hủy yêu cầu đang chờ. Không tạo ticket.",
+      "status": "cancelled",
+      "ended_at": "2026-09-15T13:03:25+00:00"
+    },
+    {
+      "turn_index": 4,
+      "user": "Chỉ xác nhận bạn đã hủy, không tạo hoặc tra cứu thêm.",
+      "started_at": "2026-09-15T13:03:25+00:00",
+      "rounds": [
+        {
+          "round": 1,
+          "assistant_text": "{\"reply\": \"Đã hủy yêu cầu. Không có hành động nào được thực hiện.\", \"tool_evidence\": []}",
+          "tool_calls": [],
+          "tool_results": []
+        }
+      ],
+      "tool_events": [],
+      "invalidated_pending_ticket": false,
+      "assistant_text": "{\"reply\": \"Đã hủy yêu cầu. Không có hành động nào được thực hiện.\", \"tool_evidence\": []}",
+      "status": "answered",
+      "ended_at": "2026-09-15T13:03:26+00:00"
+    }
+  ],
+  "updated_at": "2026-09-15T13:03:26+00:00"
+}

@@ -1,0 +1,110 @@
+{
+  "transcript_id": "5eae04927ec0477586bdcae7245a5394",
+  "version": "v3",
+  "artifact_version": "v3+pab867304d35f+t8e980839df5c",
+  "prompt_hash": "ab867304d35fcfcaed964450849eff75026a88d3230285b44e20cf6b3b75a224",
+  "tools_hash": "8e980839df5cfc2f694134ef61237b15ec3c17d4a60180c57f601d68da80fb59",
+  "runtime_version": "chat-ui-v2",
+  "runtime_policy_hash": "1826ce51269abf6c296d21e6a9ad55b76e49f2bfabbcc36a03d9786557d5549c",
+  "runtime_code_hash": "65b7144ecb994923b74ec79c22fdcd6c6a4e42372926e796c104609ffa0f4d9c",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "created_at": "2026-09-15T13:05:25+00:00",
+  "turns": [
+    {
+      "turn_index": 1,
+      "user": "Soạn ticket summary Máy in bị kẹt hàng đợi, priority low, asset_id PR-404 để tôi xem trước.",
+      "started_at": "2026-09-15T13:05:25+00:00",
+      "rounds": [
+        {
+          "round": 1,
+          "assistant_text": null,
+          "tool_calls": [
+            {
+              "name": "prepare_ticket",
+              "args": {
+                "summary": "Máy in bị kẹt hàng đợi",
+                "priority": "low",
+                "asset_id": "PR-404"
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "prepare_ticket",
+              "args": {
+                "summary": "Máy in bị kẹt hàng đợi",
+                "priority": "low",
+                "asset_id": "PR-404"
+              },
+              "executed": false,
+              "result": {
+                "status": "pending_confirmation",
+                "payload": {
+                  "summary": "Máy in bị kẹt hàng đợi",
+                  "priority": "low",
+                  "asset_id": "PR-404"
+                },
+                "message": "Chưa tạo ticket. Hãy xem nội dung và dùng nút Xác nhận."
+              }
+            }
+          ]
+        }
+      ],
+      "tool_events": [
+        {
+          "tool": "prepare_ticket",
+          "args": {
+            "summary": "Máy in bị kẹt hàng đợi",
+            "priority": "low",
+            "asset_id": "PR-404"
+          },
+          "executed": false,
+          "result": {
+            "status": "pending_confirmation",
+            "payload": {
+              "summary": "Máy in bị kẹt hàng đợi",
+              "priority": "low",
+              "asset_id": "PR-404"
+            },
+            "message": "Chưa tạo ticket. Hãy xem nội dung và dùng nút Xác nhận."
+          }
+        }
+      ],
+      "invalidated_pending_ticket": false,
+      "assistant_text": "Chưa tạo ticket. Hãy xem nội dung và dùng nút Xác nhận.",
+      "status": "waiting_for_confirmation",
+      "ended_at": "2026-09-15T13:05:28+00:00"
+    },
+    {
+      "turn_index": 2,
+      "user": "Hủy yêu cầu đang chờ. Không tạo ticket.",
+      "started_at": "2026-09-15T13:05:28+00:00",
+      "rounds": [],
+      "tool_events": [],
+      "invalidated_pending_ticket": true,
+      "assistant_text": "Đã hủy yêu cầu đang chờ. Không tạo ticket.",
+      "status": "cancelled",
+      "ended_at": "2026-09-15T13:05:28+00:00"
+    },
+    {
+      "turn_index": 3,
+      "user": "Chỉ xác nhận bạn đã hủy, không tạo hoặc tra cứu thêm.",
+      "started_at": "2026-09-15T13:05:28+00:00",
+      "rounds": [
+        {
+          "round": 1,
+          "assistant_text": "Đã hủy yêu cầu. Không có ticket nào được tạo.",
+          "tool_calls": [],
+          "tool_results": []
+        }
+      ],
+      "tool_events": [],
+      "invalidated_pending_ticket": false,
+      "assistant_text": "Đã hủy yêu cầu. Không có ticket nào được tạo.",
+      "status": "answered",
+      "ended_at": "2026-09-15T13:05:29+00:00"
+    }
+  ],
+  "updated_at": "2026-09-15T13:05:29+00:00"
+}

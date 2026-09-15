@@ -1,0 +1,141 @@
+{
+  "transcript_id": "81f3e02f87a14b88aac4b7805d07ce28",
+  "version": "v3",
+  "artifact_version": "v3+pab867304d35f+t8e980839df5c",
+  "prompt_hash": "ab867304d35fcfcaed964450849eff75026a88d3230285b44e20cf6b3b75a224",
+  "tools_hash": "8e980839df5cfc2f694134ef61237b15ec3c17d4a60180c57f601d68da80fb59",
+  "runtime_version": "chat-ui-v1",
+  "runtime_policy_hash": "9e21d936ae3f5eed59229c95bdb3e37d17613d4d5899eda4da438e3d08c717c4",
+  "runtime_code_hash": "9dc74d7e4926d394550dd85dfb197e0f432ef041d1419d14915f69aa753fde92",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "created_at": "2026-09-15T13:03:21+00:00",
+  "turns": [
+    {
+      "turn_index": 1,
+      "user": "Kiểm tra đồng thời SSO production và email production. Cho biết nguồn và thời điểm snapshot.",
+      "started_at": "2026-09-15T13:03:21+00:00",
+      "rounds": [
+        {
+          "round": 1,
+          "assistant_text": null,
+          "tool_calls": [
+            {
+              "name": "check_service_status",
+              "args": {
+                "service": "sso",
+                "environment": "production"
+              }
+            },
+            {
+              "name": "check_service_status",
+              "args": {
+                "service": "email",
+                "environment": "production"
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "check_service_status",
+              "args": {
+                "service": "sso",
+                "environment": "production"
+              },
+              "executed": true,
+              "result": {
+                "tool": "check_service_status",
+                "service": "sso",
+                "environment": "production",
+                "status": "operational",
+                "incident": null,
+                "incident_id": null,
+                "affected_locations": [],
+                "started_at": null,
+                "last_updated": "2026-09-14T08:57:00+07:00",
+                "workaround": null,
+                "checked_at": "2026-09-14T09:00:00+07:00"
+              }
+            },
+            {
+              "tool": "check_service_status",
+              "args": {
+                "service": "email",
+                "environment": "production"
+              },
+              "executed": true,
+              "result": {
+                "tool": "check_service_status",
+                "service": "email",
+                "environment": "production",
+                "status": "operational",
+                "incident": null,
+                "incident_id": null,
+                "affected_locations": [],
+                "started_at": null,
+                "last_updated": "2026-09-14T08:58:00+07:00",
+                "workaround": null,
+                "checked_at": "2026-09-14T09:00:00+07:00"
+              }
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "assistant_text": "{\"intent\":\"check_service_status\",\"action\":\"report\",\"reply\":\"Cả hai dịch vụ SSO và email đều đang hoạt động bình thường.\\n\\n- **SSO**: \\n  - Trạng thái: Hoạt động\\n  - Thời gian kiểm tra: 09:00, 14/09/2026\\n  - Cập nhật lần cuối: 08:57, 14/09/2026\\n\\n- **Email**: \\n  - Trạng thái: Hoạt động\\n  - Thời gian kiểm tra: 09:00, 14/09/2026\\n  - Cập nhật lần cuối: 08:58, 14/09/2026\",\"evidence_ids\":[]}",
+          "tool_calls": [],
+          "tool_results": []
+        }
+      ],
+      "tool_events": [
+        {
+          "tool": "check_service_status",
+          "args": {
+            "service": "sso",
+            "environment": "production"
+          },
+          "executed": true,
+          "result": {
+            "tool": "check_service_status",
+            "service": "sso",
+            "environment": "production",
+            "status": "operational",
+            "incident": null,
+            "incident_id": null,
+            "affected_locations": [],
+            "started_at": null,
+            "last_updated": "2026-09-14T08:57:00+07:00",
+            "workaround": null,
+            "checked_at": "2026-09-14T09:00:00+07:00"
+          }
+        },
+        {
+          "tool": "check_service_status",
+          "args": {
+            "service": "email",
+            "environment": "production"
+          },
+          "executed": true,
+          "result": {
+            "tool": "check_service_status",
+            "service": "email",
+            "environment": "production",
+            "status": "operational",
+            "incident": null,
+            "incident_id": null,
+            "affected_locations": [],
+            "started_at": null,
+            "last_updated": "2026-09-14T08:58:00+07:00",
+            "workaround": null,
+            "checked_at": "2026-09-14T09:00:00+07:00"
+          }
+        }
+      ],
+      "invalidated_pending_ticket": false,
+      "assistant_text": "{\"intent\":\"check_service_status\",\"action\":\"report\",\"reply\":\"Cả hai dịch vụ SSO và email đều đang hoạt động bình thường.\\n\\n- **SSO**: \\n  - Trạng thái: Hoạt động\\n  - Thời gian kiểm tra: 09:00, 14/09/2026\\n  - Cập nhật lần cuối: 08:57, 14/09/2026\\n\\n- **Email**: \\n  - Trạng thái: Hoạt động\\n  - Thời gian kiểm tra: 09:00, 14/09/2026\\n  - Cập nhật lần cuối: 08:58, 14/09/2026\",\"evidence_ids\":[]}",
+      "status": "answered",
+      "ended_at": "2026-09-15T13:03:26+00:00"
+    }
+  ],
+  "updated_at": "2026-09-15T13:03:26+00:00"
+}

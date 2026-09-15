@@ -1,0 +1,17 @@
+/Users/tridao/Documents/PersonalProjects/VINAITC/Week 1/K4B-Day04-Dao_Gia_Bao-2A202602793/starter_v0/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+test_cancel_does_not_call_provider_or_write (test_chat_runtime.RuntimeTests) ... ok
+test_changed_payload_invalidates_previous_button (test_chat_runtime.RuntimeTests) ... ok
+test_external_internal_text_is_blocked_before_network (test_chat_runtime.RuntimeTests) ... ok
+test_invalid_enum_is_blocked_before_execution (test_chat_runtime.RuntimeTests) ... ok
+test_model_confirmation_cannot_write_and_button_uses_exact_payload (test_chat_runtime.RuntimeTests) ... ok
+test_new_message_invalidates_even_when_provider_fails (test_chat_runtime.RuntimeTests) ... ok
+test_quarantined_instructions_not_forwarded_as_evidence (test_chat_runtime.RuntimeTests) ... ok
+test_repeated_call_not_executed_twice (test_chat_runtime.RuntimeTests) ... ok
+test_sensitive_input_redacted_before_model_and_transcript (test_chat_runtime.RuntimeTests) ... ok
+test_tool_error_and_provider_failure_preserve_evidence (test_chat_runtime.RuntimeTests) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.080s
+
+OK

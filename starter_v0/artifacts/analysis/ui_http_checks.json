@@ -1,0 +1,23 @@
+{
+  "/": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 2328
+  },
+  "/app.js": {
+    "status": 200,
+    "content_type": "text/javascript; charset=utf-8",
+    "bytes": 3361
+  },
+  "/style.css": {
+    "status": 200,
+    "content_type": "text/css; charset=utf-8",
+    "bytes": 2607
+  },
+  "missing_origin": {
+    "status": 403,
+    "body": {
+      "error": "invalid_origin"
+    }
+  }
+}

@@ -92,3 +92,39 @@ Thay `openrouter` bằng `openai`, `anthropic` hoặc `gemini` khi dùng provide
 Buổi học: **17:30–21:00**. 17:30–17:40 giới thiệu, 17:40–17:50 Kahoot, 17:50–20:25 làm nhóm, 20:25–21:00 demo. Mốc kiểm tra tại lớp là 20:25; xem [CHECKPOINTS.md](CHECKPOINTS.md).
 
 Hạn mặc định là **23:59 ngày học, Asia/Ho_Chi_Minh (UTC+07:00)**. Xem [SUBMISSION.md](SUBMISSION.md) và [RULES.md](RULES.md) để biết bản chốt và quy định nộp muộn.
+
+## UI chat của nhóm — Helpdesk v3 + chat-ui-v2
+
+UI dùng `OPENAI_API_KEY` đã đặt trong `starter_v0/.env`, provider `openai`, model `gpt-4o-mini`.
+Từ thư mục repository trên macOS/Linux:
+
+```bash
+cd starter_v0
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+python ui_server.py --port 8765
+```
+
+Windows PowerShell (sau khi đã tạo `.venv` và cài requirements):
+
+```powershell
+cd starter_v0
+.\.venv\Scripts\Activate.ps1
+python ui_server.py --port 8765
+```
+
+Mở **http://127.0.0.1:8765** (dùng đúng địa chỉ này). Dừng server bằng Ctrl+C.
+UI chỉ nghe loopback; không phải dịch vụ dùng chung trên Internet. Không cần Node hoặc framework web bổ sung.
+
+- Xem version, model, prompt/tools hash; mỗi lượt hiện tên công cụ, args và result/error.
+- Có thể bổ sung ID, sửa yêu cầu, hủy hoặc bắt đầu hội thoại mới.
+- Ticket chỉ được tạo khi nhấn **Xác nhận và tạo ticket** cho payload đang hiển thị. Tin nhắn mới làm mất hiệu lực payload cũ; nút **Hủy ticket** không gọi model hoặc tạo ticket.
+- Transcript tự lưu vào `starter_v0/transcripts/`; nút **Tải transcript JSON** xuất cả lịch sử, tool events, kết quả, lỗi và phiên bản.
+- Chỉ nhập dữ liệu giả lập. Không nhập credential. Tra cứu web chỉ chấp nhận hãng/model công khai khớp danh mục lab; cần `TAVILY_API_KEY` riêng nếu sử dụng. Các demo chính không cần web search.
+- UI dùng runtime `chat-ui-v2` bổ sung kiểm tra xác nhận/schema và xử lý nhiều vòng tool. Đây là code mới sau thí nghiệm; điểm v3 của `run_eval.py` không phải điểm an toàn của UI.
+
+### Checklist nhờ thành viên khác kiểm tra khởi động
+
+Một thành viên khác làm đúng các lệnh trên, mở trang, gửi `Kiểm tra trạng thái SSO production.`, kiểm tra tool/result/version và tải JSON.
+Ghi **tên người kiểm tra, OS, thời điểm, nguyên lệnh, kết quả hoặc lỗi** vào `starter_v0/artifacts/analysis/teammate_startup_check.md`.
+Hiện chưa nhận được xác nhận từ thành viên khác; kiểm thử tự động/kiểm tra của AI không thay thế bước này.
