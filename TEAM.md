@@ -60,3 +60,10 @@ Khó khăn kỹ thuật rõ nhất là xử lý xác nhận tạo ticket. Prompt
 ## Kiểm tra lịch sử đóng góp
 
 Các commit thí nghiệm cũ dùng Git identity cục bộ `Kevin Dao`; GitHub liên kết email cấu hình đó với `kevindao943`, trong khi repo và tài khoản đang đăng nhập là `kevindao94work`. Giữ nguyên lịch sử, không rewrite tác giả để tạo đóng góp giả. Bảo đã giao toàn bộ trách nhiệm dự án cho chính mình; AI assistance được khai báo phía trên. Commit công cụ audit cuối dùng tên Đào Gia Bảo và noreply email của tài khoản `kevindao94work` đã xác thực, có file kỹ thuật [verify_submission.py](starter_v0/scripts/verify_submission.py) và [kết quả audit](starter_v0/artifacts/analysis/final_submission_check.json).
+
+## Biên bản checkout
+
+- Commit audit kỹ thuật đã push và GitHub nhận tác giả `kevindao94work`: [`5a2c85743c896e7ef836e5b872a32310109e5c37`](https://github.com/kevindao94work/K4-L3-DAY04-Dao_Gia_Bao-2A202602793-PromptEngineeringToolCalling/commit/5a2c85743c896e7ef836e5b872a32310109e5c37).
+- Nhánh remote `main` đã được đối chiếu SHA với local; repo public; repo/report mở được trong Safari và trả HTTP 200 khi không đăng nhập.
+- VLearn đúng Lesson 4 · DAY04, Lab K4-L3B-Day04-Prompt-Engineering-Tool-Calling-Labs: đã điền URL trang gốc nhưng **chưa bấm nộp**. Form bắt buộc đánh giá 1–5 sao; đang chờ Bảo chọn, không tự gán đánh giá cá nhân.
+- Chưa có bằng chứng URL đã lưu trên VLearn; không đánh dấu nộp thành công.
